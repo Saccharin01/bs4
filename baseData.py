@@ -245,32 +245,32 @@ basic_data = [
 } 
 ]
 
-keys = []
-count = 0
+# keys = []
+# count = 0
 
 
-def getKey(init_data):
+# def getKey(init_data):
     
-    global count
+#     global count
         
-    for element in init_data:
-        if(type(element) == list):
-            getKey(element)
-        if(type(element) == dict):
+#     for element in init_data:
+#         if(type(element) == list):
+#             getKey(element)
+#         if(type(element) == dict):
           
-            for key, value in element.items():
-                # a.append(key)
+#             for key, value in element.items():
+#                 # a.append(key)
                 
-                if(type(value) == dict):
-                    getKey(value)
-        else:
-            # a.append(element)
-            print
+#                 if(type(value) == dict):
+#                     getKey(value)
+#         else:
+#             # a.append(element)
+#             print
         
         
-getKey(basic_data)
+# getKey(basic_data)
 
-print(keys)
+# print(keys)
 
 
 
