@@ -42,11 +42,16 @@ def recursionDef(data):
                     count += value
                 if type(value) == dict or type(value) == list:
                     recursionDef(value)
-
-                            
+     
 
 recursionDef(tutorial.tutorial)
 
 print(container)
 print(count)
 print(len(container))
+
+
+
+"""
+안녕하시지!! 안녕하시지!!! 안녕하신지!!!
+"""
