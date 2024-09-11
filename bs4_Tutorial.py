@@ -22,21 +22,27 @@ for div in li:
     
     data = div.find_all("p")
     user_name = div.find_all("a")
-    # print(data[5])
     equip_row = div.find_all("div",class_="text-center")
     
-    for element in equip_row:
-        testing = element.find("p")
-        print(testing)
-    
+
     obj["user_name"] = user_name[0].get_text()
     obj["level"] = data[1].get_text()
     obj["class"] = data[2].get_text()
     obj["server"] = data[3].get_text()
     obj["guild"] = data[4].get_text() if data[4].get_text() else ""
+
+    for element in equip_row:
+        ela = element.find("p",class_="text-xs")
+        # print(ela.get_text() if ela else "노 엘라")
+        sub_obj["ela"] = ela.get_text() if ela else ""
+        ark_passive = element.find_all("span")
+        sub_obj["ark_evolution"] = ark_passive[0].get_text()
+        sub_obj["ark_knowledge"] = ark_passive[1].get_text()
+        sub_obj["ark_leap"] = ark_passive[2].get_text()
     # for equip in data[0]:
     
-    # container.append(obj)
+    obj["equip"] = sub_obj
+    container.append(obj)
     # for string in test:
     #     anTest = string.get_text(strip=True)
     #     print(anTest)
@@ -55,9 +61,4 @@ for div in li:
         # container.append(div.get_text(strip=True))
 
 
-# with open("test.json", "w", encoding="utf-8") as file:
-#     try:
-#         json.dump(container, file, indent=2, ensure_ascii=False)
-#         print("파일 작성 완료")
-#     except Exception as e:
-#         print(f"파일 작성에 실패했습니다. 에러: {e}")
+ 
