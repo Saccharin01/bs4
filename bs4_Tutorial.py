@@ -30,6 +30,7 @@ for div in li:
     obj["class"] = data[2].get_text()
     obj["server"] = data[3].get_text()
     obj["guild"] = data[4].get_text() if data[4].get_text() else ""
+    obj["engraving"] = data[5].get_text()
 
     for element in equip_row:
         ela = element.find("p",class_="text-xs")
@@ -42,6 +43,7 @@ for div in li:
     # for equip in data[0]:
     
     obj["equip"] = sub_obj
+    
     container.append(obj)
     # for string in test:
     #     anTest = string.get_text(strip=True)
