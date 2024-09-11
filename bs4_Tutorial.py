@@ -61,4 +61,9 @@ for div in li:
         # container.append(div.get_text(strip=True))
 
 
- 
+with open("test.json", "w", encoding="utf-8") as file:
+    try:
+        json.dump(container, file, indent=2, ensure_ascii=False)
+        print("파일 작성 완료")
+    except Exception as e:
+        print(f"파일 작성에 실패했습니다. 에러: {e}")
